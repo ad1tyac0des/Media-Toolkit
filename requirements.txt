@@ -1,5 +1,4 @@
 Pillow
-ffmpeg-python
 colorama
 tqdm
 fonttools
