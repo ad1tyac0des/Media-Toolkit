@@ -182,7 +182,7 @@ def main():
             print_warning("No Supported Font Files Found")
             sys.exit(1)
 
-        output_folder = os.path.join(os.path.dirname(input_folder), "converted_fonts")
+        output_folder = os.path.join(os.path.dirname(input_folder + "\\"), "converted_fonts")
         os.makedirs(output_folder, exist_ok=True)
         print_info(f"Created Output Folder: {output_folder}")
 
