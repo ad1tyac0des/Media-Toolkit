@@ -154,7 +154,7 @@ def get_font_files(folder):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Media Converter")
+    parser = argparse.ArgumentParser(description="Media Toolkit")
     parser.add_argument("-conv", action="store_true", help="Convert files")
     parser.add_argument("-r", action="store_true", help="Rename files")
     parser.add_argument("-comp", action="store_true", help="Compress files")
