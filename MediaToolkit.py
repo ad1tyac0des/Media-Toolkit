@@ -1,9 +1,3 @@
-# This media toolkit is designed for web development asset optimization.
-# It helps prepare media files for efficient use in web projects by:
-# 1. Converting images to web-friendly formats (e.g., WebP)
-# 2. Compressing images and videos to reduce file sizes and improve loading times
-# 3. Renaming files in a consistent manner for easier management in JavaScript
-
 import os
 import sys
 import argparse
@@ -103,7 +97,7 @@ def convert_video(input_path, output_path, compression_level=0):
                     elapsed_time = hours * 3600 + minutes * 60 + seconds
                     progress = min(int(elapsed_time / duration * 100), 100)
                     pbar.update(progress - pbar.n)
-                    pbar.refresh()  # Force refresh the progress bar
+                    pbar.refresh()
 
         process.wait()
 
@@ -130,10 +124,10 @@ def get_media_files(folder):
 
 def convert_font(input_path, output_path, output_format):
     try:
-        # Read the input font
+        # Read input font
         font = TTFont(input_path)
 
-        # Convert to the desired format
+        # Convert to desired format
         if output_format.lower() in ["ttf", "otf"]:
             # For TTF and OTF, we need to remove the WOFF/WOFF2 specific tables
             for table in ["WOFF", "wOFF", "WOFF2", "wOFF2"]:
@@ -147,7 +141,7 @@ def convert_font(input_path, output_path, output_format):
         else:
             raise ValueError(f"Unsupported output format: {output_format}")
 
-        # Save the converted font
+        # Save converted font
         font.save(output_path)
         print_success(
             f"Successfully converted {os.path.basename(input_path)} to {os.path.basename(output_path)}"
@@ -181,8 +175,8 @@ def main():
                 "Rename and compression options are not applicable for font conversion. These options will be ignored."
             )
 
-        # Font conversion logic
-        input_folder = input("Enter the input folder path: ").strip()
+        # Font conversion
+        input_folder = input("Enter Folder Path: ").strip()
         if not os.path.isdir(input_folder):
             print_error("Invalid Folder Path.")
             sys.exit(1)
@@ -220,7 +214,7 @@ def main():
         print_success("Font Conversion Completed.")
         return
 
-        # Existing code for image and video processing
+        # image and video processing
     if not (args.conv or args.r or args.comp or args.all):
         print_error(
             "Please specify at least one operation (-conv, -r, -comp, -A, or -font)"
