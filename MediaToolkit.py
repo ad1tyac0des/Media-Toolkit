@@ -217,6 +217,7 @@ def main():
         sys.exit(1)
 
     input_folder = input("Enter the input folder path: ").strip()
+    print(input_folder)
     if not os.path.isdir(input_folder):
         print_error("Invalid Folder Path.")
         sys.exit(1)
@@ -228,7 +229,7 @@ def main():
         print_warning("No Supported Media Files Found")
         sys.exit(1)
 
-    output_folder = os.path.join(os.path.dirname(input_folder), "converted_media")
+    output_folder = os.path.join(os.path.dirname(input_folder + "\\"), "converted_media")
     os.makedirs(output_folder, exist_ok=True)
     print_info(f"Created Output Folder: {output_folder}")
 
