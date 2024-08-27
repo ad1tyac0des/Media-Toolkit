@@ -176,7 +176,7 @@ def main():
     args = parser.parse_args()
 
     if args.font:
-        if args.r or args.comp:
+        if args.r or args.comp or args.all:
             print_warning(
                 "Rename and compression options are not applicable for font conversion. These options will be ignored."
             )
@@ -208,6 +208,8 @@ def main():
         if font_format not in ["ttf", "otf", "woff", "woff2"]:
             print_error(f"Unsupported font format: {font_format}")
             sys.exit(1)
+        elif font_format == "woff2":
+            print("Defaulting to woff2")
 
         for font_file in font_files:
             input_path = os.path.join(input_folder, font_file)
