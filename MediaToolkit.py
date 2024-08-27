@@ -2,16 +2,11 @@ import os
 import sys
 import argparse
 from PIL import Image
-# import ffmpeg
 from colorama import init, Fore
-# import time
 import re
 import subprocess
 from tqdm import tqdm
 from fontTools.ttLib import TTFont
-# from fontTools.subset import Subsetter
-# from fontTools.ttLib.sfnt import readTTCHeader
-# import io
 
 # Initialize colorama
 init(autoreset=True)
